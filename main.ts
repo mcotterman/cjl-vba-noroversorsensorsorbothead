@@ -407,9 +407,9 @@ function controlServo(id: string, stype: string, newState: number) {
 //     }
 // }
 
-function getSensorData(type: any, pin: any) {
-    return hummingbird.getSensor(type, pin);
-}
+// function getSensorData(type: any, pin: any) {
+//     return hummingbird.getSensor(type, pin);
+// }
 
 /******
  * NON-Platform Specific Functions
@@ -626,16 +626,16 @@ function handleMessage(msg: string) {
     }
 }
 
-// input.onButtonPressed(Button.A, function () {
-//     if (debug === 1) {
-//         debug = 0;
-//     } else {
-//         debug = 1;
-//     }
-//     basic.showNumber(debug);
-//     basic.pause(1000);
-//     basic.clearScreen();
-// })
+input.onButtonPressed(Button.A, function () {
+    if (debug === 1) {
+        debug = 0;
+    } else {
+        debug = 1;
+    }
+    basic.showNumber(debug);
+    basic.pause(1000);
+    basic.clearScreen();
+})
 
 input.onButtonPressed(Button.AB, function () {
     if (isRunning) {
@@ -710,9 +710,9 @@ if (isVba) {
     });
 
     // Group 4 - On Shake
-    // input.onGesture(Gesture.Shake, function () {
-    //     handleVba(4);
-    // });
+    input.onGesture(Gesture.Shake, function () {
+        handleVba(4);
+    });
 
     // Group 9 - Sensor
     // basic.forever(function () {
